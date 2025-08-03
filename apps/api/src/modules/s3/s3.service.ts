@@ -24,7 +24,7 @@ export class S3Service {
     const secretAccessKey =
       this.configService.get('AWS_SECRET_ACCESS_KEY') || '';
     if (!this.bucketName || !this.region || !accessKeyId || !secretAccessKey) {
-      this.logger.error(
+      this.logger.warn(
         'AWS S3 configuration is not properly set in environment variables.',
       );
       return;
